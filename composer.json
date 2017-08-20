@@ -1,6 +1,6 @@
 {
     "name": "crumby/breadcrumbs",
-    "description": "Breadcrumbs for Laravel 5 ",
+    "description": "Localized Breadcrumbs for Laravel 5.4 ",
     "keywords":[
         "breadcrumbs"
     ],
