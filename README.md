@@ -1,48 +1,61 @@
-Installation
+Installation:
+-------------
+```
+> composer require crumby/breadcrumbs:"dev-master"
+> php artisan vendor:publish --provider="Crumby\Breadcrumbs\BreadcrumbsServiceProvider" --tag=config
+> php artisan vendor:publish --provider="Crumby\Breadcrumbs\BreadcrumbsServiceProvider" --tag=lang
+```
 
-Configuration
-  Package settings
-  
-  Automatic Breadcrumbs generation
-     - settings
-        config/crumby-crumbs/route-breadcrumbs.php
+Register service and facade:
+----------------------------
+File: config/app.php
 
+```
+'providers' => [
+    ......................
+    'Crumby\Breadcrumbs\BreadcrumbsServiceProvider',
+    ........................
+ ];
+ 
+ 'aliases' => [ 
+    ......................
+    'Breadcrumbs' => 'Crumby\Breadcrumbs\Facades\Breadcrumbs',
+    ......................
+ ];
+```
+
+Configuration:
+-------------     
+- Automatic Breadcrumbs generation config/crumby-crumbs/route-breadcrumbs.php        
 <?php
 return [
     'routes' => [
         'package' => [
-            'bind' => [
-                'param' => 'package',
-                'modelProp' => 'title'
-            ],
             'childOf' => [
                 'route' => 'packages'
             ]   
         ],
-        'contactus' => [
+        'article' => [
             'childOf' => [
-                'route' => 'aboutus'
+                'route' => 'package'
             ]   
         ],
     ]
 ];
 
-'label' key is used to resolve the Breadcrumb display name for route dynamic parameter {name}. 
-In the case it is field "name" from model App\Product. If 'label' is not set we will try to resolve the display name by parameter name: 
-Example: if dynamic parameter name is {name} then we will try  'product'.'name'.
-NOTE: 'bind' => ['param', 'class'] are mostly duplicate of
-public function boot()
-{
-    parent::boot();
+- 'label' key can be used to resolve the Breadcrumb display name for route static url. 
+- If there is(are) dynamic parameter(s) in url, RouteResolver should be configured.
 
-    Route::bind('name', function ($value) {
-        return App\Product::where('name', $value);
-    });
-} 
-OR find instance by 'id'
-public function boot()
-{
-    parent::boot();
-
-    Route::model('name', App\Product::class);
-}
+        
+Example:
+--------
+```
+    class StaticPagesController extends Controller {
+        public function __construct()
+        {
+            ...........................
+            $this->middleware('crumbs');
+            ...........................
+        }
+    }
+```
