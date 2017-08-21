@@ -49,6 +49,7 @@ return [
         
 Example:
 --------
+1. add  the middle
 ```
     class StaticPagesController extends Controller {
         public function __construct()
@@ -59,3 +60,6 @@ Example:
         }
     }
 ```
+
+2. output bread crumbs variable in your page <body>
+  {!! $breadcrumbs->render() !!} 
