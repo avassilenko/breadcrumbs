@@ -24,8 +24,8 @@ class BreadcrumbsServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/config/crumby-crumbs/breadcrumbs.php' => config_path('crumby-crumbs/breadcrumbs.php'),
-                __DIR__.'/config/crumby-crumbs/route-breadcrumbs.php' => config_path('crumby-crumbs/route-breadcrumbs.php')
+                __DIR__.'/config/breadcrumbs.php' => config_path('crumby-crumbs/breadcrumbs.php'),
+                __DIR__.'/config/route-breadcrumbs.php' => config_path('crumby-crumbs/route-breadcrumbs.php')
             ], 'config');
             $this->publishes([
                 __DIR__.'/resources/lang/en/breadcrumbs.php' => resource_path('lang/en/breadcrumbs.php')
