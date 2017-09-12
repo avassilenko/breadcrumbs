@@ -16,7 +16,7 @@ class BreadcrumbsMiddleware
     public function handle($request, Closure $next)
     {
         // set Home
-        \Breadcrumbs::addCrumb(trans('breadcrumbs.home'), "/");
+        \Breadcrumbs::addCrumb(trans('breadcrumbs.home'), \URL::to("/"));
         
         // if current route is not home add next level
         if (\Route::current()->getName() != 'home') {

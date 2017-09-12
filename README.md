@@ -26,7 +26,8 @@ File: config/app.php
 
 Configuration:
 -------------     
-- Automatic Breadcrumbs generation config/crumby-crumbs/route-breadcrumbs.php        
+- Automatic Breadcrumbs generation config/crumby-crumbs/route-breadcrumbs.php  
+```      
 <?php
 return [
     'routes' => [
@@ -42,7 +43,7 @@ return [
         ],
     ]
 ];
-
+```
 - 'label' key can be used to resolve the Breadcrumb display name for route static url. 
 - If there is(are) dynamic parameter(s) in url, RouteResolver should be configured.
 

@@ -696,7 +696,7 @@ class Breadcrumbs
             $route = $routeResolved['url'];
         }
  
-        $this->addCrumb($this->getLabel($routeName, $this->isTranslate()), $route);
+        $this->addCrumb($this->getLabel($routeName, $this->isTranslate()), \URL::to($route));
     }
     
     /**
