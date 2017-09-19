@@ -64,3 +64,7 @@ Example:
 
 2. output bread crumbs variable in your page <body>
   {!! $breadcrumbs->render() !!} 
+
+Documentation:
+-------------
+<a href="https://www.crumby-pack.com">API documentatuin</a>
