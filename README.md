@@ -67,4 +67,4 @@ Example:
 
 Documentation:
 -------------
-<a href="https://www.crumby-pack.com">API documentatuin</a>
+<a href="https://www.crumby-pack.com/packages/laravel-54-breadcrumbs">API documentatuin</a>
