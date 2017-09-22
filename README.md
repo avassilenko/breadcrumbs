@@ -1,7 +1,7 @@
 Installation:
 -------------
 ```
-> composer require crumby/breadcrumbs:"dev-master"
+> composer require crumby/breadcrumbs
 > php artisan vendor:publish --provider="Crumby\Breadcrumbs\BreadcrumbsServiceProvider" --tag=config
 > php artisan vendor:publish --provider="Crumby\Breadcrumbs\BreadcrumbsServiceProvider" --tag=lang
 ```
