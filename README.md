@@ -62,11 +62,11 @@ Example:
     }
 ```
 
-2. output bread crumbs variable in your page body
+2. output breadcrumbs variable in your page body
 ```
   {!! $breadcrumbs->render() !!} 
 ```
 
 Documentation:
 -------------
-<a href="https://www.crumby-pack.com/packages/laravel-54-breadcrumbs">API documentatuin</a>
+<a href="https://www.crumby-pack.com/packages/laravel-54-breadcrumbs">API documentation</a>
